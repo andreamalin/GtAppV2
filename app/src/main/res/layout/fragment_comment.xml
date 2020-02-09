@@ -20,7 +20,7 @@
             style="@style/CommentStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{comment_by_user ?? @string/defaultcomment}">
+            android:text="@{comment_by_user}">
 
         </TextView>
 
