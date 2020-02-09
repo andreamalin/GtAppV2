@@ -9,7 +9,6 @@ import android.widget.ShareActionProvider
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
-import com.example.laboratorio4.CommentDirections
 import com.example.laboratorio4.R
 import com.example.laboratorio4.databinding.FragmentCommentBinding
 
