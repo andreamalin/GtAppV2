@@ -166,7 +166,7 @@
         \nayudar a mi mamá en la pastelería.
     </string>
     <string name="acerca_de">Andrea Amaya</string>
-    <string name="default_comment">Olvidaste dejar tu comentario</string>
+    <string name="defaultcomment">Olvidaste dejar tu comentario</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

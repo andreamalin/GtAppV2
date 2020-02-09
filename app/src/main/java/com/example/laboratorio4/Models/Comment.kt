@@ -12,9 +12,7 @@ import androidx.navigation.ui.NavigationUI
 import com.example.laboratorio4.R
 import com.example.laboratorio4.databinding.FragmentCommentBinding
 
-/**
- * A simple [Fragment] subclass.
- */
+
 class Comment : Fragment() {
     private lateinit var shareActionProvider: ShareActionProvider
     private lateinit var binding: FragmentCommentBinding
