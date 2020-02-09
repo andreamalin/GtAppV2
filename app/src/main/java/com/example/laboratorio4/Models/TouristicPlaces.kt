@@ -1,7 +1,5 @@
-package com.example.laboratorio4
+package com.example.laboratorio4.Models
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,12 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.replace
 import androidx.navigation.findNavController
+import com.example.laboratorio4.R
 import com.example.laboratorio4.databinding.FragmentTouristicPlacesBinding
-import kotlinx.android.synthetic.main.fragment_title.*
 import kotlinx.android.synthetic.main.fragment_touristic_places.*
-import java.util.ResourceBundle.getBundle
 
 class TouristicPlaces : Fragment() {
     private var placetoshow: String? = "Xocomil" //default
@@ -22,7 +18,8 @@ class TouristicPlaces : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_touristic_places, container, false)
+        binding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_touristic_places, container, false)
 
         //Getting place chose
         arguments?.let {

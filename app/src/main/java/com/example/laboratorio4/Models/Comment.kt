@@ -1,8 +1,7 @@
-package com.example.laboratorio4
+package com.example.laboratorio4.Models
 
 
 import android.content.Intent
-import android.content.pm.ApplicationInfo
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -10,6 +9,8 @@ import android.widget.ShareActionProvider
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.example.laboratorio4.CommentDirections
+import com.example.laboratorio4.R
 import com.example.laboratorio4.databinding.FragmentCommentBinding
 
 /**
@@ -23,7 +24,8 @@ class Comment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_comment, container, false)
+        binding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_comment, container, false)
         //Get comment
         arguments?.let {
             comment = it.getString("new_comment")

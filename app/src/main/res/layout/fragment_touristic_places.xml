@@ -24,7 +24,7 @@
         android:padding="@dimen/padding_regular"
         android:screenOrientation="portrait"
         android:singleLine="true"
-        tools:context=".TouristicPlaces">
+        tools:context=".Models.TouristicPlaces">
 
         <TextView
             android:id="@+id/touristicName"
