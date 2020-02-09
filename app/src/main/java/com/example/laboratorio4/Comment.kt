@@ -35,7 +35,7 @@ class Comment : Fragment() {
         //Menu
         setHasOptionsMenu(true)
 
-        //Return tu principal fragment
+        //Return to principal fragment
         binding.buttonReturn.setOnClickListener{
             view!!.findNavController().navigate(CommentDirections.actionFragmentCommentToTitleFragment())
         }
@@ -53,7 +53,7 @@ class Comment : Fragment() {
     //Item Selected
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         super.onOptionsItemSelected(item)
-
+        //Showing sharing options
         if (item.itemId == R.id.share){
             val intent = Intent()
             intent.action = Intent.ACTION_SEND

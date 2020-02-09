@@ -24,11 +24,12 @@ class TouristicPlaces : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_touristic_places, container, false)
 
-
+        //Getting place chose
         arguments?.let {
             placetoshow = it.getString("actual_place")
         }
 
+        //Changing view
         changeTextViews()
 
         //Go to comment fragment
