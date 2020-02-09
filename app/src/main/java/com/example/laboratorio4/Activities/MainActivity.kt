@@ -1,23 +1,35 @@
 package com.example.laboratorio4.Activities
 
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.laboratorio4.R
 import com.example.laboratorio4.databinding.ActivityMainBinding
 
+
+
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this,
-            R.layout.activity_main
-        )
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         val navController = this.findNavController(R.id.myNavHostFragment)
+
+        val uri: Uri? = intent.data
+        if (uri!=null){
+            val params: List<String> = uri.pathSegments
+            val id = params.get(params.size - 1)
+
+            Log.d("DeepLink", "id" + id)
+
+        }
 
         NavigationUI.setupActionBarWithNavController(this, navController)
     }
