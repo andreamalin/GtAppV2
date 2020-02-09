@@ -36,6 +36,9 @@
         android:name="com.example.laboratorio4.Comment"
         android:label="Comentario"
         tools:layout="@layout/fragment_comment" >
+        <action
+            android:id="@+id/action_fragmentComment_to_titleFragment"
+            app:destination="@id/titleFragment" />
     </fragment>
 
 </navigation>

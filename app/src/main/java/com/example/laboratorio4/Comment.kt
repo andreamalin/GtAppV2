@@ -25,11 +25,22 @@ class Comment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_comment, container, false)
         //Get comment
+        arguments?.let {
+            comment = it.getString("new_comment")
+        }
+        binding.commentByUser = comment
 
         //Keyboard
         getActivity()?.getWindow()?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
         //Menu
         setHasOptionsMenu(true)
+
+        //Return tu principal fragment
+        binding.buttonReturn.setOnClickListener{
+            view!!.findNavController().navigate(CommentDirections.actionFragmentCommentToTitleFragment())
+        }
+
+
         return binding.root
     }
 

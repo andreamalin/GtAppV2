@@ -17,11 +17,14 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import java.util.HashMap
+import android.R.attr.tag
+import javax.xml.xpath.XPathConstants.STRING
+
 
 class TitleFragment : Fragment() {
     private lateinit var binding: FragmentTitleBinding
     var changeEditText:Boolean?=true
-    private var place_chose = "place_chose"
+    private var placechose = "place_chose"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -51,30 +54,29 @@ class TitleFragment : Fragment() {
 
         //Show Xocomil info on text views
         binding.buttonXocomil.setOnClickListener{
-            choosePlace("Xocomil")
+            placechose = "Xocomil"
+            val bundle = bundleOf ("actual_place" to placechose)
 
-            view!!.findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToTouristicPlaces())
+
+            view!!.findNavController().navigate(R.id.action_titleFragment_to_touristicPlaces, bundle)
         }
         //Show Rio Dulce info on text views
         binding.buttonRioDulce.setOnClickListener{
-            choosePlace("Rio Dulce")
-            view!!.findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToTouristicPlaces())
+            placechose = "Rio Dulce"
+            val bundle = bundleOf ("actual_place" to placechose)
+
+            view!!.findNavController().navigate(R.id.action_titleFragment_to_touristicPlaces, bundle)
         }
         //Show Semuc Champey info on text views
         binding.buttonSemuc.setOnClickListener{
-            choosePlace("Semuc Champey")
+           placechose = "Semuc Champey"
+            val bundle = bundleOf ("actual_place" to placechose)
 
-            view!!.findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToTouristicPlaces())
+            view!!.findNavController().navigate(R.id.action_titleFragment_to_touristicPlaces, bundle)
         }
 
 
         return binding.root
-    }
-
-
-    private fun choosePlace(place_chose: String){
-        val intent = Intent()
-        intent.putExtra("place_chose", place_chose)
     }
 
 
@@ -90,5 +92,7 @@ class TitleFragment : Fragment() {
 
         return NavigationUI.onNavDestinationSelected(item, view!!.findNavController())
     }
+
+
 
 }

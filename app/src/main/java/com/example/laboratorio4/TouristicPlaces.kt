@@ -7,10 +7,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.replace
 import androidx.navigation.findNavController
 import com.example.laboratorio4.databinding.FragmentTouristicPlacesBinding
+import kotlinx.android.synthetic.main.fragment_title.*
+import kotlinx.android.synthetic.main.fragment_touristic_places.*
+import java.util.ResourceBundle.getBundle
 
 class TouristicPlaces : Fragment() {
     private var placetoshow: String? = "Xocomil" //default
@@ -20,16 +24,23 @@ class TouristicPlaces : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_touristic_places, container, false)
 
-        val intent = Intent()
-        placetoshow = intent.getStringExtra("place_chose")
+
+        arguments?.let {
+            placetoshow = it.getString("actual_place")
+        }
 
         changeTextViews()
 
+        //Go to comment fragment
         binding.submitComment.setOnClickListener {
-            view!!.findNavController().navigate(TouristicPlacesDirections.actionTouristicPlacesToComment())
+            val actualcomment = comment.getText().toString()
+            val bundle = bundleOf ("new_comment" to actualcomment)
+
+            view!!.findNavController().navigate(R.id.action_TouristicPlaces_to_comment, bundle)
         }
 
         return binding.root
+
     }
 
 
@@ -51,6 +62,9 @@ class TouristicPlaces : Fragment() {
             binding.placePhrase = getString(R.string.rio_phrase)
         }
     }
+
+
+
 
 
 }
