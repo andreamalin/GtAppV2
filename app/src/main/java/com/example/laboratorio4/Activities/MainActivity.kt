@@ -20,16 +20,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
+
+
         val navController = this.findNavController(R.id.myNavHostFragment)
-
-        val uri: Uri? = intent.data
-        if (uri!=null){
-            val params: List<String> = uri.pathSegments
-            val id = params.get(params.size - 1)
-
-            Log.d("DeepLink", "id" + id)
-
-        }
 
         NavigationUI.setupActionBarWithNavController(this, navController)
     }
